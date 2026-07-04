@@ -81,11 +81,15 @@ model AllotmentsTableData {
   inserviceCandidate    Boolean?            @map("inservice_candidate")
   candidateFlag         String?             @map("candidate_flag")
 
+  isProceed             Boolean             @default(false) @map("is_proceed")
+
   createdAt             DateTime            @default(now()) @map("created_at")
   updatedAt             DateTime            @updatedAt @map("updated_at")
 
   @@index([neetCounsellingDataId])
   @@index([counsellingId])
   @@index([round, session])
+  @@index([isProceed])
+  @@index([counsellingId, isProceed])
   @@map("allotments_table_data")
 }
