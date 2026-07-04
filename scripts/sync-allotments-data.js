@@ -305,18 +305,18 @@ export async function processNextAllotmentTick(counsellingId) {
   let totalSaved = 0;
   let proceededRounds = sourceRecord.proceededRounds;
 
-  console.log(
-    `Processing neet_data_id=${sourceRecord.id} — ${rounds.length} round(s) total`,
-  );
-  console.log(
-    `  institute=${params.instituteId} course=${params.courseId} quota=${params.quotaId} category=${params.category}`,
-  );
+  // console.log(
+  //   `Processing neet_data_id=${sourceRecord.id} — ${rounds.length} round(s) total`,
+  // );
+  // console.log(
+  //   `  institute=${params.instituteId} course=${params.courseId} quota=${params.quotaId} category=${params.category}`,
+  // );
 
   for (let i = proceededRounds; i < rounds.length; i++) {
     const roundInfo = rounds[i];
-    console.log(
-      `  Round ${i + 1}/${rounds.length} (API round=${roundInfo.round}, session=${roundInfo.session})`,
-    );
+    // console.log(
+    //   `  Round ${i + 1}/${rounds.length} (API round=${roundInfo.round}, session=${roundInfo.session})`,
+    // );
 
     const saved = await syncAllotmentsForCombo(
       counsellingId,
